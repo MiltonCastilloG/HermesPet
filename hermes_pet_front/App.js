@@ -12,7 +12,7 @@ const App = () => {
   //if the app was more complex I would use a reducer with an object context instead to treat all the states
   const [currentProfile, setCurrentProfile] = useState(undefined);
 
-  const setProfile = id => () => setCurrentProfile(id);
+  const setProfile = id => setCurrentProfile(id);
 
   return (
     <ProfileContext.Provider value={{ currentProfile, setProfile }}>
@@ -28,7 +28,16 @@ const App = () => {
               }
             }}
           />
-          <Stack.Screen name="Profile" component={Profile}/>
+          <Stack.Screen
+            name="Profile"
+            component={Profile}
+            options={{ 
+              title: 'Hermes Pet',
+              headerTitleStyle: {
+                alignSelf: 'space-between'
+              }
+            }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </ProfileContext.Provider>
