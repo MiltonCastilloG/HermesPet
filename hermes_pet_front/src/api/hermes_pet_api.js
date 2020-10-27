@@ -16,7 +16,7 @@ const hermesPetApi = {
             },
         ]
     },
-    async getPet(){
+    async getPet(id){
         return {
             name: "Katyusha",
             description: "Cute dog",
