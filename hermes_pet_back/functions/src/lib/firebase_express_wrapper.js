@@ -1,5 +1,5 @@
 /*
-General purpose wrapper for all REST APIs CRUDs in the sapp.
+General purpose wrapper for all REST APIs CRUDs in the same app.
 Returns the same object app so that every app can still add
 functions for any other routes needed.
 */
