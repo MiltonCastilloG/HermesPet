@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
+import { styles } from '../../styles/components/completes/LikeBtn'; 
 
 export const LikeBtn = ({ isLiked,  callback}) => {
   return (
@@ -16,26 +17,3 @@ export const LikeBtn = ({ isLiked,  callback}) => {
     </TouchableOpacity>
   );
 }
-  
-const styles = StyleSheet.create({
-    likeBtn: {
-        position: 'absolute',
-        width: 50,
-        height: 50,
-        alignItems: 'center',
-        justifyContent: 'center',
-        right: 10,
-        bottom: 20,
-        backgroundColor: "white",
-        borderRadius: 50,
-        borderColor: 'grey',
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 4.5,
-        elevation: 6,
-  },
-});

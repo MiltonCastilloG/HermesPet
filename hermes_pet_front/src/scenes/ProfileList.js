@@ -7,17 +7,17 @@ const petsInfoProto = [
     {
         id: 0,
         name: "Katyusha",
-        photo: "https://i.insider.com/5484b33a6da8119577fbada9?width=700&format=jpeg&auto=webp"
+        photo: "https://firebasestorage.googleapis.com/v0/b/hermes-pet-20e9b.appspot.com/o/photo5818882831936501257.jpg?alt=media&token=1309b2b6-b5cd-49e1-84bc-5060c4594d65"
     },
     {
         id: 1,
         name: "Bismark",
-        photo: "https://i.insider.com/5484d9d1eab8ea3017b17e29?width=700&format=jpeg&auto=webp"
+        photo: "https://firebasestorage.googleapis.com/v0/b/hermes-pet-20e9b.appspot.com/o/photo5818882831936501258.jpg?alt=media&token=e542615e-8fd0-4a36-9bcf-4fab162033bb"
     },
     {
         id: 2,
         name: "Leonard",
-        photo: "https://i.insider.com/5484e527ecad04de4324638b?width=700&format=jpeg&auto=webp"
+        photo: "https://firebasestorage.googleapis.com/v0/b/hermes-pet-20e9b.appspot.com/o/photo5818882831936501259.jpg?alt=media&token=c3179708-44b3-4a17-a60a-ab53edf82e26"
     },
 ]
 
