@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { View } from 'react-native';
 import { CardSwiper } from '../components/completes/CardSwiper';
+import { ProfileContext } from '../contexts/ProfileContext'
 
 export const ProfileList = ({ navigation }) => {
+    const { setProfile } = useContext(ProfileContext);
 
     const petsInfoProto = [
         {
@@ -24,9 +26,12 @@ export const ProfileList = ({ navigation }) => {
 
     const petsInfo = petsInfoProto.map(pet => {
         const petInfoForCard = {
-            name: pet.name,
+            title: pet.name,
             img: pet.photo,
-            callback: () => navigation.navigate('Profile')
+            callback: () => {
+                setProfile(pet.id)
+                navigation.navigate('Profile')
+            }
         }
         return petInfoForCard;
     })

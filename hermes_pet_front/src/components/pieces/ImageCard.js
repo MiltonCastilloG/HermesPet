@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, Button, Image } from 'react-native';
+import {View, Image, TouchableOpacity, Text } from 'react-native';
+import { styles } from '../../styles/components/pieces/ImageCard'; 
 
-export const ImageCard = ( { name, callback, img } ) => {
-    return (
+export const ImageCard = ( { title, callback, img } ) => (
         <View style={styles.cardContainer}>
             <View style={styles.imgContainer}>
                 <Image
@@ -10,30 +10,10 @@ export const ImageCard = ( { name, callback, img } ) => {
                 source={{ uri: img }}
                 />
             </View>
-            <Button style={styles.cardTitle} onPress={callback} title={`${name} ->`} />
+            <TouchableOpacity
+            style={styles.titleBtn}
+            onPress={callback}>
+                <Text style={styles.titleText}>{`Meet ${title}`}</Text>
+            </TouchableOpacity>
         </View>
-    );
-}
-  
-const styles = StyleSheet.create({
-    cardContainer: {
-        alignSelf: 'stretch',
-        flexDirection: 'column',
-        justifyContent: 'flex-end',
-        alignItems: 'stretch',
-        height: "100%"
-      },
-    cardTitleBtn: {
-        fontSize: 20,
-        borderTopStartRadius: 5,
-        height: 40
-    },
-    imgContainer: {
-        width: "100%",
-        height: "100%",
-    },
-    img: {
-        height: "100%",
-        resizeMode: 'stretch'
-    }
-});
+);
