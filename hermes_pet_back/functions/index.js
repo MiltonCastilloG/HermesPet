@@ -1,4 +1,4 @@
 const functions = require('firebase-functions');
-const pets = require('./src/pets/pet_app');
+const petApi = require('./src/pets/pet_api');
 
-exports.hermesPet = functions.region('europe-west1').https.onRequest(pets);
+exports.hermesPet = functions.region('europe-west1').https.onRequest(petApi);

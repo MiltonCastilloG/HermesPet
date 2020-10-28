@@ -1,13 +1,16 @@
-module.exports = {
+module.exports = dbRef => ({
     async get(req, res) {
-        //...implement
-    
-        res.json({pet: `Soon...`});
+        const snapshot = await dbRef.get();
+        const data = [];
+        snapshot.forEach( elem => data.push( elem.data() ) )
+
+        res.json({pets: data});
     },
     async getById(req, res) {
-        //...implement
+        const doc = dbRef.doc(req.params.id);
+        const snapshot = await doc.get();
     
-        res.json({pet: `Soon...`});
+        res.json({ pet: snapshot.data() });
     },
     async post(req, res) {
         //...implement
@@ -24,4 +27,4 @@ module.exports = {
     
         res.json({pet: `Soon...`});
     }
-};
+});
