@@ -1,0 +1,1 @@
+export default "https://europe-west1-hermes-pet-20e9b.cloudfunctions.net/hermesPet";

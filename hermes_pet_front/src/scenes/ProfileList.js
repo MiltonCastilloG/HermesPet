@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { CardSwiper } from '../components/completes/CardSwiper';
 import { ProfileContext } from '../contexts/ProfileContext';
+import BASE_URL from '../services/base_url';
 
 export const ProfileList = ({ navigation }) => {
     const { setProfile } = useContext(ProfileContext);
@@ -9,7 +10,7 @@ export const ProfileList = ({ navigation }) => {
     const [petsInfo, setPetInfo] = useState([]);
 
     useEffect(() => {
-        fetch("https://europe-west1-hermes-pet-20e9b.cloudfunctions.net/hermesPet")
+        fetch(BASE_URL)
         .then(res => res.json())
         .then(data=>{
             const mappedPetData = data.pets.map(pet => {

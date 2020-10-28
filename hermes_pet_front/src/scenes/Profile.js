@@ -2,7 +2,8 @@ import React, { useContext,useState, useEffect } from 'react';
 import { Text, View, Image, ScrollView } from 'react-native';
 import { ProfileContext } from '../contexts/ProfileContext';
 import { LikeBtn } from '../components/completes/LikeBtn';
-import { styles } from '../styles/scenes/Profile'; 
+import { styles } from '../styles/scenes/Profile';
+import BASE_URL from '../services/base_url';
 
 export const Profile = () => {
   const { currentProfile } = useContext(ProfileContext);
@@ -11,14 +12,14 @@ export const Profile = () => {
   const [profile, setProfile] = useState({});
 
   useEffect(() => {
-    fetch(`https://europe-west1-hermes-pet-20e9b.cloudfunctions.net/hermesPet/${currentProfile}`)
+    fetch(`${BASE_URL}/${currentProfile}`)
     .then(res => res.json())
     .then(data=> setProfile(data.pet))
     .catch(e => alert(`Error: ${e}` ))
   }, []);
 
   const like = () => {
-    fetch(`https://europe-west1-hermes-pet-20e9b.cloudfunctions.net/hermesPet/like/${currentProfile}`, {
+    fetch(`${BASE_URL}/like/${currentProfile}`, {
       method: 'PUT'
     })
     .then(res => res.json())
