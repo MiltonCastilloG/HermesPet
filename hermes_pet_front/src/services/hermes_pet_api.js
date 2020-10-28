@@ -1,27 +1,16 @@
-const pets = [
-    {
-        id: 0,
-        name: "Katyusha",
-        photo: "https://i.insider.com/5484b33a6da8119577fbada9?width=700&format=jpeg&auto=webp"
-    },
-    {
-        id: 1,
-        name: "Bismark",
-        photo: "https://i.insider.com/5484d9d1eab8ea3017b17e29?width=700&format=jpeg&auto=webp"
-    },
-    {
-        id: 2,
-        name: "Leonard",
-        description: "Awesome dog",
-        photo: "https://i.insider.com/5484e527ecad04de4324638b?width=700&format=jpeg&auto=webp"
-    },
-]
+const BASE_URL = "https://europe-west1-hermes-pet-20e9b.cloudfunctions.net/hermesPet";
 
-export default {
+export const petApi = {
     async getPets() {
-            return pets;
+        const response = await fetch(BASE_URL);
+        const data = await response.json();
+
+        return data.pets;
     },
     async getPet(id){
-        return pets[id];
+        const response = await fetch(`${BASE_URL}/${id}`);
+        const data = await response.json();
+        
+        return data.pet;
     }
 }

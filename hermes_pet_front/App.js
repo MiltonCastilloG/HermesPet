@@ -13,7 +13,7 @@ const App = () => {
   const [currentProfile, setCurrentProfile] = useState(undefined);
 
   const setProfile = id => setCurrentProfile(id);
-
+  
   return (
     <ProfileContext.Provider value={{ currentProfile, setProfile }}>
       <NavigationContainer styles={styles.container}>
@@ -34,7 +34,7 @@ const App = () => {
             options={{ 
               title: 'Hermes Pet',
               headerTitleStyle: {
-                alignSelf: 'space-between'
+                alignSelf: 'flex-end'
               }
             }}
           />
